@@ -1,2 +1,22 @@
 # Ocular-Disease-Detection-Using-Fundus-Images
-Ocular diseases such as Diabetic Retinopathy (DR), Glaucoma (GL), and Cataract (CA) significantly impact vision and quality of life. This study proposes a deep learning-based multi- class classification system for fundus image analysis using a curated subset of retinal images. Unlike traditional preprocessing, our approach combines Wavelet Transform for multi- resolution feature extraction, Contrast Limited Adaptive Histogram Equalization (CLAHE) for contrast enhancement, and blood vessel segmentation for vascular structure clarity. Two models—VGG-19 and ConvNeXt—are utilized to effectively capture both local and hierarchical image features. The proposed system improves classification performance, with ConvNeXt enhancing hierarchical feature extraction and VGG-19 leveraging deep spatial feature learning.
+
+This project explores two deep learning architectures — ConvNeXt and VGG19 — for image classification tasks using computer vision techniques. It includes data preprocessing, augmentation, training, evaluation, and result visualization.
+
+## 📁 Project Structure
+- ConvNeXt_Model.ipynb — ConvNeXt-based model with full training pipeline
+- VGG19_Model.ipynb — VGG19-based model with training and evaluation
+
+## 🚀 Features
+- Implementations of ConvNeXt and VGG19 models
+- Image preprocessing and augmentation
+- Training and validation with performance metrics
+- Visualization: loss & accuracy curves, confusion matrix
+
+## 🛠️ Technologies Used
+- Python
+- PyTorch (or TensorFlow, depending on notebook)
+- Jupyter Notebook
+- Matplotlib / Seaborn
+- scikit-learn
+- OpenCV
+  
