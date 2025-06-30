@@ -19,4 +19,9 @@ This project explores two deep learning architectures — ConvNeXt and VGG19 —
 - Matplotlib / Seaborn
 - scikit-learn
 - OpenCV
+
+  ## 📊 Results
+- ConvNeXt Accuracy: 90.64%
+- VGG19 Accuracy: 88.51%
+- Confusion matrices and performance trends are visualized in the notebooks.
   
