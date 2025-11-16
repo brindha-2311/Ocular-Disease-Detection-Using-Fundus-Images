@@ -1,158 +1,145 @@
-🩺 Ocular Disease Detection Using Fundus Images
+
+# 🩺 Ocular Disease Detection Using Fundus Images
 
 Automated detection of retinal diseases is a critical step toward preventing avoidable blindness and improving clinical decision-making in ophthalmology.
-This project presents a deep learning–based multi-class retinal disease classification system using fundus images, targeting:
+This project presents a **deep learning–based multi-class retinal disease classification system** using fundus images, targeting the following classes:
 
-Cataract (CA)
+* **Cataract (CA)**
+* **Diabetic Retinopathy (DR)**
+* **Glaucoma (GL)**
+* **Normal**
 
-Diabetic Retinopathy (DR)
+A total of **4,217 fundus images** from publicly available datasets were preprocessed using:
 
-Glaucoma (GL)
+* **CLAHE (Contrast Limited Adaptive Histogram Equalization)**
+* **Wavelet Transform**
+* **Blood Vessel Segmentation**
 
-Normal
+These techniques enhance structural clarity and contrast for optimal model learning.
 
-A total of 4,217 fundus images from publicly available datasets were preprocessed using CLAHE, Wavelet Transform, and Blood Vessel Segmentation to enhance structural and contrast features.
+Multiple deep learning architectures — **VGG19, ResNet50, Vision Transformer (ViT), Graph Neural Network (GNN), and EfficientNet-B0** — were trained and evaluated using **5-fold cross-validation**.
 
-Multiple architectures — VGG19, ResNet50, Vision Transformer (ViT), Graph Neural Network (GNN), and EfficientNet-B0 — were trained and evaluated using 5-fold cross-validation.
-Among these, EfficientNet-B0 achieved the best performance:
+Among all models, **EfficientNet-B0** achieved the highest performance:
 
-Accuracy: 93.83%
+* **Accuracy:** 93.83%
+* **Precision:** 0.94
+* **Recall:** 0.94
+* **F1-Score:** 0.94
 
-Precision: 0.94
+To ensure interpretability and clinical reliability, several Explainable AI (XAI) techniques were used:
 
-Recall: 0.94
+**LIME, Grad-CAM, Integrated Gradients, Gradient SHAP, Guided Backpropagation, Saliency Maps, and Occlusion Sensitivity.**
 
-F1-Score: 0.94
+The model visualizations show that the network focuses on clinically meaningful retinal regions, providing transparent and trustworthy predictions.
 
-To ensure interpretability and clinical reliability, several Explainable AI (XAI) techniques were applied, including:
+The proposed **EfficientNet-B0–based system** demonstrates strong diagnostic accuracy, robustness, and interpretability — making it a promising tool for automated retinal disease screening and early diagnosis.
 
-LIME, Grad-CAM, Integrated Gradients, Gradient SHAP, Guided Backpropagation, Saliency Maps, and Occlusion Sensitivity.
+---
 
-Visualization results show that the models focused on clinically meaningful retinal regions, demonstrating transparency and trustworthiness.
-The proposed EfficientNet-B0–based system delivers strong diagnostic accuracy, stability, and interpretability — making it a promising tool for automated retinal disease screening.
+## 📁 Project Structure
 
-📁 Project Structure
 Ocular-Disease-Detection-Using-Fundus-Images/
 │
 ├── ConvNeXt_Model.ipynb                 # ConvNeXt full training pipeline (separate file)
 │
-├── MultiModel_XAI.ipynb                 # VGG19 + ResNet50 + ViT + GNN + EfficientNet-B0 all XAI methods
-│                                        # Contains training, evaluation, confusion matrices,
-│                                        # accuracy curves, and XAI visualizations
+├── MultiModel_XAI.ipynb                 # VGG19 + ResNet50 + ViT + GNN + EfficientNet-B0
+│                                        # Includes training, evaluation, confusion matrices,
+│                                        # accuracy curves, and all XAI visualizations
 │
 ├── EfficientNetB0_Model.ipynb           # Best-performing model (separate file)
-│                                        # Includes preprocessing + training + 5-fold CV
+│                                        # Includes preprocessing, training, 5-fold CV
 │
 └── README.md
 
-🚀 Features
-✔ ConvNeXt Model (Separate File)
 
-Full training pipeline
+---
 
-Augmentation & preprocessing
+## 🚀 Features
 
-Evaluation (accuracy, loss, confusion matrix)
+### ✔ **ConvNeXt Model (Separate File)**
 
-Achieved 90.64% accuracy
+* Full training pipeline
+* Preprocessing & augmentation
+* Evaluation metrics: accuracy, loss, confusion matrix
+* Achieved **90.64% accuracy**
 
-✔ Combined Multi-Model Notebook
+---
 
-Includes:
+### ✔ **Combined Multi-Model + XAI Notebook**
 
-VGG19
+Includes implementation of:
 
-ResNet50
-
-EfficientNet-B0
-
-Vision Transformer (ViT)
-
-Graph Neural Network (GNN)
-
-All XAI Visualizations
+* **VGG19**
+* **ResNet50**
+* **EfficientNet-B0**
+* **Vision Transformer (ViT)**
+* **Graph Neural Network (GNN)**
+* **All XAI Techniques**
 
 Features:
 
-Preprocessing (CLAHE + Wavelet + Vessel Segmentation)
+* Preprocessing (CLAHE + Wavelet + Vessel Segmentation)
+* Model training & validation
+* Accuracy/loss plots
+* Confusion matrices
+* XAI heatmaps for explainability
 
-Model training & validation
+---
 
-Accuracy and loss plots
+### ✔ **EfficientNet-B0 (Separate File — Best Model)**
 
-Confusion matrices
+* Full pipeline with preprocessing
+* **5-fold cross-validation**
+* Best performance: **93.83% accuracy**
+* Most stable and clinically interpretable
+* Extended XAI analysis
 
-XAI heatmaps for model interpretability
+---
 
-✔ EfficientNet-B0 (Separate File — Best Model)
+## 🛠️ Technologies Used
 
-5-fold cross-validation
+* **Python**
+* **PyTorch / TensorFlow**
+* **OpenCV**
+* **NumPy / Pandas**
+* **scikit-learn**
+* **Matplotlib / Seaborn**
+* **Jupyter Notebook**
 
-Best performing model with 93.83% accuracy
+All notebooks include confusion matrices, accuracy/loss graphs, and XAI outputs.
 
-Highly robust & clinically interpretable
+---
 
-Extended XAI interpretation layer
+## 🧠 Explainable AI (XAI) Methods Used
 
-🛠️ Technologies Used
+XAI enhances clinical trust and interpretability using:
 
-Python
+* **Grad-CAM**
+* **Integrated Gradients**
+* **LIME**
+* **Gradient SHAP**
+* **Guided Backpropagation**
+* **Saliency Maps**
+* **Occlusion Sensitivity**
 
-PyTorch / TensorFlow
+These methods highlight retinal areas influencing predictions, confirming medical relevance.
 
-OpenCV
+---
 
-NumPy / Pandas
+## ✅ Conclusion
 
-scikit-learn
+This project provides a comprehensive deep learning pipeline for retinal disease detection featuring:
 
-Matplotlib / Seaborn
+* High diagnostic accuracy
+* Strong generalization via 5-fold CV
+* Clinical explainability with XAI
+* Multiple advanced architectures
+* Best overall performance using EfficientNet-B0
 
-Jupyter Notebook
+The system is well-suited for:
 
-📊 Model Performance Summary
-Model	Accuracy	Notes
-EfficientNet-B0	93.83%	Best performance (separate file)
-ConvNeXt	90.64%	Separate notebook
-VGG19	88.51%	Part of combined notebook
-ResNet50	~89–92%	Combined notebook
-Vision Transformer (ViT)	~90%	Combined notebook
-Graph Neural Network (GNN)	Structure-based learning	Combined notebook
+* **Automated disease screening**
+* **Clinical decision support**
+* **Research and academic studies**
+* **Real-world ophthalmology AI applications**
 
-Confusion matrices, accuracy curves, and XAI plots are included in each notebook.
-
-🧠 Explainable AI (XAI) Methods Used
-
-To build clinical trust:
-
-Grad-CAM
-
-Integrated Gradients
-
-LIME
-
-Gradient SHAP
-
-Guided Backpropagation
-
-Saliency Maps
-
-Occlusion Sensitivity
-
-These methods highlight retinal areas contributing to predictions, confirming clinical relevance.
-
-✅ Conclusion
-
-This project provides a complete deep learning pipeline for retinal disease detection with:
-
-High diagnostic accuracy
-
-Strong generalization across folds
-
-Clinically meaningful explainability
-
-Multiple deep learning architectures
-
-Best performance achieved by EfficientNet-B0
-
-The system is suitable for automated screening, clinical decision support, and research applications.
