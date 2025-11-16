@@ -36,24 +36,6 @@ The proposed **EfficientNet-B0–based system** demonstrates strong diagnostic a
 
 ---
 
-## 📁 Project Structure
-
-Ocular-Disease-Detection-Using-Fundus-Images/
-│
-├── ConvNeXt_Model.ipynb                 # ConvNeXt full training pipeline (separate file)
-│
-├── MultiModel_XAI.ipynb                 # VGG19 + ResNet50 + ViT + GNN + EfficientNet-B0
-│                                        # Includes training, evaluation, confusion matrices,
-│                                        # accuracy curves, and all XAI visualizations
-│
-├── EfficientNetB0_Model.ipynb           # Best-performing model (separate file)
-│                                        # Includes preprocessing, training, 5-fold CV
-│
-└── README.md
-
-
----
-
 ## 🚀 Features
 
 ### ✔ **ConvNeXt Model (Separate File)**
